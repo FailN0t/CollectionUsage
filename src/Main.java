@@ -1,23 +1,21 @@
 import com.sun.source.tree.Tree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] colors = {"Красный", "Синий", "Зеленый", "Желтый"};
+        HashMap<String, Integer> basket = new HashMap<>();
 
-        ArrayList<String> colorList = new ArrayList<>(Arrays.asList(colors));
+        basket.put("Молоко", 20);
+        basket.put("Масло", 10);
+        basket.put("Хлеб", 5);
 
-        HashSet<String> colorsSet = new HashSet<>(colorList);
+        TreeMap<String, Integer> basketMap = new TreeMap<>(new ProductComparator());
 
-        TreeSet<String> colorsTreeSet = new TreeSet<>(new ClorComparator());
-
-        colorsTreeSet.addAll(colorsSet);
-
-
+        basketMap.putAll(basket);
+        for(String produkt : basketMap.keySet()){
+            System.out.println(produkt + " - " + basketMap.get(produkt));
+        }
 
     }
 }
