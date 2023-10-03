@@ -19,5 +19,6 @@ public class Main {
         }
 
         System.out.println(Arrays.toString(newColors));
+        System.out.println("aadas");
     }
 }
