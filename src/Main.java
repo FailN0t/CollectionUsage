@@ -1,24 +1,23 @@
+import com.sun.source.tree.Tree;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
         String[] colors = {"Красный", "Синий", "Зеленый", "Желтый"};
-        ArrayList<String> colorList = new ArrayList<>();
-        for (String color : colors){
-            colorList.add(color);
-        }
-        colorList.addAll(Arrays.asList(colors));
 
-        System.out.println(colorList);
+        ArrayList<String> colorList = new ArrayList<>(Arrays.asList(colors));
 
-        String[] newColors = new String[colorList.size()];
+        HashSet<String> colorsSet = new HashSet<>(colorList);
 
-        for (int i = 0; i < newColors.length; i++) {
-            newColors[i] = colorList.get(i);
-        }
+        TreeSet<String> colorsTreeSet = new TreeSet<>(new ClorComparator());
 
-        System.out.println(Arrays.toString(newColors));
-        System.out.println("aadas");
+        colorsTreeSet.addAll(colorsSet);
+
+
+
     }
 }
