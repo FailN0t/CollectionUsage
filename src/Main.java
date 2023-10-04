@@ -13,8 +13,8 @@ public class Main {
         TreeMap<String, Integer> basketMap = new TreeMap<>(new ProductComparator());
 
         basketMap.putAll(basket);
-        for(String produkt : basketMap.keySet()){
-            System.out.println(produkt + " - " + basketMap.get(produkt));
+        for(String product : basketMap.keySet()){
+            System.out.println(product + " - " + basketMap.get(product));
         }
         for(Map.Entry<String, Integer> count : basketMap.entrySet()){
             System.out.println(count.getKey() + " - " +  count.getValue());
